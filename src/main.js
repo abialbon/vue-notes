@@ -5,6 +5,9 @@ export const eBus = new Vue({
   methods: {
     changeSelected(comp) {
       this.$emit('selection', comp)
+    },
+    addNote(note) {
+      this.$emit('addnote', note)
     }
   }
 });

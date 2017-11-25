@@ -1,3 +1,15 @@
 <template>
-  <p>This is a single note</p>
+  <div class="box">
+    <p>{{ text }}</p>
+  </div>
 </template>
+
+<script>
+  export default {
+    props: ['text']
+  }
+</script>
+
+<style>
+
+</style>

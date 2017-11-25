@@ -1,8 +1,10 @@
 <template>
   <section>
-    <component :is="selected">
+    <keep-alive>
+      <component :is="selected">
 
-    </component>
+      </component>
+    </keep-alive>
   </section>
 </template>
 
