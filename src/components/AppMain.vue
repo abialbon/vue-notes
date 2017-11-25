@@ -1,11 +1,29 @@
 <template>
   <section>
-    Main notes area
+    <component :is="selected">
+
+    </component>
   </section>
 </template>
 
 <script>
-
+  import AddNote from './AddNote.vue';
+  import AllNotes from './AllNotes.vue';
+  import { eBus } from '../main';
+  export default {
+    data() {
+      return {
+        selected: 'AllNotes'
+      }
+    },
+    components: {
+      AllNotes,
+      AddNote
+    },
+    created() {
+      eBus.$on('selection', (comp) => this.selected = comp)
+    }
+  }
 </script>
 
 <style scoped lang="scss">
